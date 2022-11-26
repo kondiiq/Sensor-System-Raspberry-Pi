@@ -9,7 +9,7 @@ def main():
     t = float(random.randrange(20, 40))
     h = float(random.randrange(60, 80))
     p = float(random.randrange(1000, 2137))
-
+    timestamp = time.time()
     print(f"Temperature {t}\n Humidity {h} \n Pressure {p}")
 
     url = 'https://api.thingspeak.com/update?api_key=YVFPSOWJ8WF64X2G&field1=0'
@@ -19,7 +19,7 @@ def main():
     res = requests.post(url, sensor_readings, req_header)
     print(f"Print: {res.text}")
     print(f"Status code: {res.status_code}")
-    time.sleep(200)
+    time.sleep(2)
 
 
 if __name__ == "__main__":
